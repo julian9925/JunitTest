@@ -38,11 +38,23 @@ public class StringCompareTest {
     @Before
     public void setUp() {
     	strcat = new StringCompare();
+    	//System.out.println("Run before StrCat Test");
+    }
+    
+    @BeforeClass
+    public static void BeforeClass() {
+    	System.out.println("Run Before StrCat Class");
     }
     
     @After
     public void tearDown() {
     	strcat = null;
+    	//System.out.println("Run After StrCat Test");
+    }
+    
+    @AfterClass
+    public static void AfterClass() {
+    	System.out.println("Run After StrCat Class");
     }
 
     @Test

@@ -10,6 +10,7 @@ import org.junit.*;
 import org.junit.runner.*;
 import org.junit.runner.notification.Failure;
 import org.junit.runners.*;
+
 import cc.JunitTest.Calculator;
 
 @RunWith(value=Parameterized.class)
@@ -47,19 +48,31 @@ public class CalculatorTest {
     @Before
     public void setUp() {
         calculator = new Calculator();
+        //System.out.println("Run Before Calculator Test");
+    }
+    
+    @BeforeClass
+    public static void BeforeClass() {
+    	System.out.println("Run Before Calculator Class");
     }
     
     @After
     public void tearDown() {
         calculator = null;
+        //System.out.println("Run After Calculator Test");
+    }
+    
+    @AfterClass
+    public static void AfterClass() {
+    	System.out.println("Run After Calculator Class");
     }
     
     @Test
     public void testPlus() {
         int result = calculator.plus(para1, para2);
-        assertEquals(expected+1, result);
+        assertEquals(expected, result+1);
     }
-    
+
     @Test
     public void testTime() {
         int result = calculator.times(para3, para4);
